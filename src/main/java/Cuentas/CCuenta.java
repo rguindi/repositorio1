@@ -1,5 +1,9 @@
 package Cuentas;
-
+/**
+ * @version Primera version
+ * 
+ * @author Raul
+ */
 public class CCuenta {
 
     /**
@@ -63,11 +67,22 @@ public class CCuenta {
     private String cuenta;
     private double saldo;
     private double tipoInterés;
+    
+    
+    /**
+     * Constructor sin parámetros de la clase cuenta.
+     */
 
     public CCuenta()
     {
     }
-
+    /**
+     * Constructor de la clase CCuenta
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo 
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -75,11 +90,22 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * Getter de saldo
+     * @return saldo
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    
+    /**
+     * Método para ingresar una cantidad. Comprueba si la cantidad es positiva.
+     * @param cantidad
+     * @throws Exception 
+     */
+    
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -87,6 +113,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Método para retirar una cantidad. Comprueba el saldo disponible y la cantidad solicitada.
+     * @param cantidad
+     * @throws Exception 
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
